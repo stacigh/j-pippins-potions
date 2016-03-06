@@ -110,7 +110,7 @@
 
 		input[type=email] {
 			width: 100%;
-			padding: 15px 10px;
+			padding: 18px 10px;
 			border: 3px solid $c-ltgrey;
 		}
 
@@ -262,6 +262,8 @@
 	}
 
 	.button {
+		display: inline-block;
+		text-align: center;
 		margin-top: $gutter;
 	}
 }
@@ -365,7 +367,8 @@
 		}
 	}
 
-	input[type=submit] {
+	.fieldgroup .button {
+		display: inline-block;
 		margin-top: $gutter;
 	}
 }
