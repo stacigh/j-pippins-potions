@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title></title>
+        <title>J. Pippin's Potions</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Merriweather:400,400italic|Lato:400,700,900,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/styles.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
@@ -20,21 +20,410 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+
+        <header class="site-header">
+            <div class="header__logo">
+                <h1>J. Pippin's Potions</h1>
+            </div>
+
+            <div class="header__cauldron">
+                <a href="#" class="cauldron-button icon-cauldron js-toggle-cauldron"></a>
+            </div>
+        </header>
+
+        <section class="banded cauldron">
+            <i class="icon-close-button js-close-cauldron"></i>
+            <div class="row">
+                <form>
+                    <div class="col-33">
+                        <p class="cauldron__heading">In Your Cauldron</p>
+
+                        <div class="cauldron__product">
+                            <img class="cauldron__product-thumbnail" src="img/thumb-veritaserum.jpg" alt="A bottle of Veritaserum" width="100" height="100">
+
+                            <div class="cauldron__product-details">
+                                <p><b>Veritaserum</b> <span>$10</span></p>
+                                <p><b>Size:</b> 3 Oz</p>
+                                <p><b>QTY:</b> 1</p>
+                                <p><a class="button button--grey button--tiny">Remove</a> <a class="button button--grey button--tiny">Edit</a></p>
+                            </div>
+                        </div>
+
+                        <div class="cauldron__product">
+                            <img class="cauldron__product-thumbnail" src="img/thumb-felixfelicis.jpg" alt="A bottle of Felix Felicis" width="100" height="100">
+
+                            <div class="cauldron__product-details">
+                                <p><b>Felix Felicis</b> <span>$10</span></p>
+                                <p><b>Size:</b> 1 Oz</p>
+                                <p><b>QTY:</b> 1</p>
+                                <p><a class="button button--grey button--tiny">Remove</a> <a class="button button--grey button--tiny">Edit</a></p>
+                            </div>
+                        </div>
+
+                        <div class="cauldron__product">
+                            <img class="cauldron__product-thumbnail" src="img/thumb-amortentia.jpg" alt="A bottle of Amortentia" width="100" height="100">
+
+                            <div class="cauldron__product-details">
+                                <p><b>Amortentia</b> <span>$10</span></p>
+                                <p><b>Size:</b> 1 Oz</p>
+                                <p><b>QTY:</b> 1</p>
+                                <p><a class="button button--grey button--tiny">Remove</a> <a class="button button--grey button--tiny">Edit</a></p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-33">
+                        <p class="cauldron__heading">Delivery Details</p>
+
+                        <fieldset>
+                            <legend>Home Address:</legend>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="fname">First Name <span class="is-required">*</span></label>
+                                <input id="fname" name="fname" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="lname">Last Name <span class="is-required">*</span></label>
+                                <input id="lname" name="lname" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="address">Address <span class="is-required">*</span></label>
+                                <input id="address" name="address" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="address-cont">Address Cont.</label>
+                                <input id="address-cont" name="address-cont" type="text" />
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="city">City <span class="is-required">*</span></label>
+                                <input id="city" name="city" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="state">State <span class="is-required">*</span></label>
+                                <select name="state" id="state" required>
+                                    <option disabled selected> -- select an option -- </option>
+                                    <option value="Alabama">Alabama</option>
+                                    <option value="Alaska">Alaska</option>
+                                    <option value="Arizona">Arizona</option>
+                                    <option value="Arkanas">Arkanas</option>
+                                    <option value="California">California</option>
+                                    <option value="Colorado">Colorado</option>
+                                    <option value="Connecticut">Connecticut</option>
+                                    <option value="Delaware">Delaware</option>
+                                    <option value="Florida">Florida</option>
+                                    <option value="Georgia">Georgia</option>
+                                    <option value="Hawaii">Hawaii</option>
+                                    <option value="Idaho">Idaho</option>
+                                    <option value="Illinois">Illinois</option>
+                                    <option value="Indiana">Indiana</option>
+                                    <option value="Iowa">Iowa</option>
+                                    <option value="Kansas">Kansas</option>
+                                    <option value="Kentucky">Kentucky</option>
+                                    <option value="Louisianna">Louisianna</option>
+                                    <option value="Maine">Maine</option>
+                                    <option value="Maryland">Maryland</option>
+                                    <option value="Massachusetts">Massachusetts</option>
+                                    <option value="Michigan">Michigan</option>
+                                    <option value="Minnisota">Minnisota</option>
+                                    <option value="Mississippi">Mississippi</option>
+                                    <option value="Misouri">Misouri</option>
+                                    <option value="Montana">Montana</option>
+                                    <option value="Nebraska">Nebraska</option>
+                                    <option value="Nevada">Nevada</option>
+                                    <option value="New Hampshire">New Hampshire</option>
+                                    <option value="New Jersey">New Jersey</option>
+                                    <option value="New Mexico">New Mexico</option>
+                                    <option value="New York">New York</option>
+                                    <option value="North Carolina">North Carolina</option>
+                                    <option value="North Dakota">North Dakota</option>
+                                    <option value="Ohio">Ohio</option>
+                                    <option value="Oklahoma">Oklahoma</option>
+                                    <option value="Oregon">Oregon</option>
+                                    <option value="Pennsylvania">Pennsylvania</option>
+                                    <option value="Rhode Island">Rhode Island</option>
+                                    <option value="South Carolina">South Carolina</option>
+                                    <option value="South Dakota">South Dakota</option>
+                                    <option value="Tennessee">Tennessee</option>
+                                    <option value="Texas">Texas</option>
+                                    <option value="Utah">Utah</option>
+                                    <option value="Vermont">Vermont</option>
+                                    <option value="Virgina">Virgina</option>
+                                    <option value="Washington">Washington</option>
+                                    <option value="West Virginia">West Virginia</option>
+                                    <option value="Wisconsin">Wisconsin</option>
+                                    <option value="Wyoming">Wyoming</option>
+                                </select>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="zip">Zip Code <span class="is-required">*</span></label>
+                                <input id="zip" name="zip" type="text" required/>
+                            </p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Select Delivery Method</legend>
+                            <p class="fieldgroup fieldgroup--nomargin">
+                                <input type="radio" name="shipping" id="shipping-owl" value="Owl" /><label for="shipping-owl" required>Owl</label>
+                            </p>
+                            <p class="fieldgroup fieldgroup--nomargin">
+                                <input type="radio" name="shipping" id="shipping-floo" value="Floo Network" /><label for="shipping-floo">Floo Network</label>
+                            </p>
+                        </fieldset>
+                    </div>
+
+                    <div class="col-33">
+                        <p class="cauldron__heading">Billing Information</p>
+
+                        <fieldset>
+                            <legend>Payment Details:</legend>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="cardtype">Card Type <span class="is-required">*</span></label>
+                                <select name="cardtype" id="cardtype" required>
+                                    <option disabled selected> -- select an option -- </option>
+                                    <option value="Visa">Visa</option>
+                                    <option value="Masercard">Masercard</option>
+                                    <option value="Discover">Discover</option>
+                                    <option value="American Express">American Express</option>
+                                </select>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="cardnumber">Card Number <span class="is-required">*</span></label>
+                                <input id="cardnumber" name="cardnumber" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="expiration-month">Expiration <span class="is-required">*</span></label>
+                                <select class="exp-field" name="expiration-month" id="expiration-month" required>
+                                    <option disabled selected> -- </option>
+                                    <option value="01">01</option>
+                                    <option value="02">02</option>
+                                    <option value="03">03</option>
+                                    <option value="04">04</option>
+                                    <option value="05">05</option>
+                                    <option value="06">06</option>
+                                    <option value="07">07</option>
+                                    <option value="08">08</option>
+                                    <option value="09">09</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                                <select class="exp-field" name="expiration-year" id="expiration-year" required>
+                                    <option disabled selected> -- </option>
+                                    <option value="2016">2016</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2020">2020</option>
+                                    <option value="2021">2021</option>
+                                    <option value="2022">2022</option>
+                                </select>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="cvv">CVV <span class="is-required">*</span></label>
+                                <input id="cvv" name="cvv" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="phone">Phone <span class="is-required">*</span></label>
+                                <input id="phone" name="phone" type="text" required/>
+                            </p>
+
+                            <p class="fieldgroup">
+                                <label class="label" for="email">Email <span class="is-required">*</span></label>
+                                <input id="email" name="email" type="email" required/>
+                            </p>
+                            <p class="fieldgroup">
+                                <input type="checkbox" name="newsletter" id="newsletter" value="Newsletter" checked /><label for="newsletter">Sign up for our newsletter</label>
+                            </p>
+
+                            <p class="label"><span class="is-required">*</span> Required Field</p>
+
+                            <input type="submit" class="button" value="Complete Purchase">
+                        </fieldset>
+
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="hero">
+            <div class="row">
+                <div class="col-100">
+                    <h2 class="h1">The only makers of <span class="product-name"></span> since 1753.</h2>
+                    <picture class="hero__image">
+                        <source srcset="img/hero-image-large.png" media="(min-width: 767px)">
+                        <img src="img/hero-image-small.png" alt="J. Pippin's Potions is the only place you can find Amortentia, Felix Felicis and Veritaserum.">
+                    </picture>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded banded--purple opt-in">
+            <div class="row">
+                <div class="col-100">
+                    <p class="opt-in__text"><b>Truth</b> be told, we’d <b>love</b> to bring you a little bit of <b>luck</b>. <span>Weekly potion making tips from the pros, delivered straight to your inbox.</span></p>
+
+                    <form action="" method="post" class="opt-in__form">
+                        <input type="email" placeholder="email" />
+                        <input type="submit" value="Subscribe" class="button button--gold" />
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded product">
+            <div class="row">
+                <div class="col-33 product__image">
+                    <img src="img/bottle-veritaserum-lg.png" alt="A bottle of Veritaserum" width="359" height="680">
+                </div>
+
+                <div class="col-66 product__details">
+                    <h3>Veritaserum</h3>
+                    <h4>Powerful Truth Serum, 3 Ounces</h4>
+                    <h5>$10</h5>
+                    <p>Clear, colorless, odorless. Almost indistinguishable from water. This powerful truth fluid can be mixed with any drink. Just three drops is all it takes to make the drinker tell the complete truth to any question put to him her.</p>
+
+                    <div class="tile">
+                        <form action="" method="post">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" value="1" />
+                            <input type="submit" value="Add To Cauldron" class="button button--block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded banded--purple banded--reverse testimonial">
+            <div class="row">
+                <div class="col-33 testimonial__image">
+                    <img src="img/headshot-snape.jpg" alt="An image of Severus Snape">
+                </div>
+                <div class="col-66 testimonial__details">
+                    <blockquote>
+                        <q>Three drops of this and even You-Know-Who himself would spill out his darkest secrets.</q>
+                        <footer>
+                            <p>Severus Snape</p>
+                            <p>Headmaster, Head of Slytherin House</p>
+                            <p>Hogwarts School of Witchcraft and Wizardry</p>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded banded--reverse product">
+            <div class="row">
+                <div class="col-33 product__image">
+                    <img src="img/bottle-felixfelicis-lg.png" alt="A bottle of Felix Felicis" width="359" height="680">
+                </div>
+
+                <div class="col-66 product__details">
+                    <h3>Felix Felicis</h3>
+                    <h4>Liquid Luck, 1 Ounce</h4>
+                    <h5>$10</h5>
+                    <p>A powerful brew which brings the drinker luck for a period of time, during which everything they attempt will be successful. Use sparingly. Causes giddiness, recklessness, and dangerous overconfidence if taken in excess.</p>
+
+                    <div class="tile">
+                        <form action="" method="post">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" value="1" />
+                            <input type="submit" value="Add To Cauldron" class="button button--block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded banded--purple testimonial">
+            <div class="row">
+                <div class="col-33 testimonial__image">
+                    <img src="img/headshot-slughorn.jpg" alt="An image of Horace Slughorn">
+                </div>
+                <div class="col-66 testimonial__details">
+                    <blockquote>
+                        <q>I’ve used this potion twice in my life; each time resulting in a perfect day.</q>
+                        <footer>
+                            <p>Horace Slughorn</p>
+                            <p>Potions Master</p>
+                            <p>Hogwarts School of Witchcraft and Wizardry</p>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded product">
+            <div class="row">
+                <div class="col-33 product__image">
+                    <img src="img/bottle-amortentia-lg.png" alt="A bottle of Amortentia" width="359" height="680">
+                </div>
+
+                <div class="col-66 product__details">
+                    <h3>Amortentia</h3>
+                    <h4>A Potion for Passion, 1 Ounce</h4>
+                    <h5>$10</h5>
+                    <p>The most powerful love potion* in the world. Distinctive for it’s mother-of-pearl sheen and whisps of purple vapors. Smells different to each person, according to what attracts them. Can cause obsessive behavior. Use responsibly.</p>
+
+                    <div class="tile">
+                        <form action="" method="post">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" value="1" />
+                            <input type="submit" value="Add To Cauldron" class="button button--block">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="banded banded--purple banded--reverse testimonial">
+            <div class="row">
+                <div class="col-33 testimonial__image">
+                    <img src="img/headshot-voldemort.jpg" alt="An image of He-Who-Must-Not-Be-Named">
+                </div>
+                <div class="col-66 testimonial__details">
+                    <blockquote>
+                        <q>If it hadn’t been for J. Pippin’s Amortentia, I wouldn’t be alive today.</q>
+                        <footer>
+                            <p>He-Who-Must-Not-Be-Named</p>
+                            <p>The Dark Lord</p>
+                            <p>Heir of Slytherin</p>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <footer class="banded banded--gold footer">
+            <div class="row">
+                <div class="col-100">
+                    <p>&copy; 2016, J. Pippin's Potions</p>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
 
         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='https://www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script>
+        <script src="js/min/plugins-min.js"></script>
+        <script src="js/min/main-min.js"></script>
     </body>
 </html>

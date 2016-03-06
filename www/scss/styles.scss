@@ -1,0 +1,396 @@
+////////////////////////////////////////////////////////////////////////////
+
+// FRAMEWORK
+
+////////////////////////////////////////////////////////////////////////////
+
+@import 'reset';
+@import 'utilities';
+@import 'variables';
+@import 'typography';
+@import 'framework';
+@import 'forms';
+
+////////////////////////////////////////////////////////////////////////////
+
+// STYLES
+
+////////////////////////////////////////////////////////////////////////////
+
+.site-header {
+	@extend .clearfix;
+	border-bottom: 2px solid $c-ltgrey;
+	padding: $gutter;
+
+	h1 {
+		font-size: $fs-24;
+		text-transform: uppercase;
+		font-weight: $fw-black;
+	}
+
+	.header__logo {
+		width: 70%;
+		float: left;
+	}
+
+	.header__cauldron {
+		width: 30%;
+		float: left;
+		text-align: right;
+
+		.cauldron-button {
+			position: absolute;
+			top: 0;
+			right: 0;
+			text-decoration: none;
+			font-size: 22px;
+			color: $c-black;
+			padding: $gutter;
+
+			&:hover {
+				color: $c-purple;
+			}
+
+			&:after {
+				content: '3';
+				font-size: 11px;
+				line-height: 15px;
+				color: $c-white;
+				font-weight: bold;
+				text-align: center;
+				display: block;
+				width: 23px;
+				height: 23px;
+				background-color: $c-gold;
+				border: 3px solid $c-white;
+				border-radius: 100%;
+				position: absolute;
+				top: 19px;
+				right: 16px;
+			}
+		}
+	}
+}
+
+.hero {
+	text-align: center;
+	background: linear-gradient(to bottom, #ffffff 0%,#ffffff 83%,#ffffff 83%,#eeeeee 83%,#ffffff 90%);
+
+	h2 {
+		margin: 50px 0 100px;
+	}
+
+	.col-100 {
+		margin-bottom: 0;
+	}
+}
+
+.opt-in {
+	text-align: center;
+
+	.opt-in__text {
+		font-family: $f-secondary;
+		font-style: italic;
+		@include set-type-as-h5();
+		@include breakpoint(768px, min) {
+			span {
+				display: block;
+			}
+		}
+
+		b {
+			font-family: $f-primary;
+			font-weight: $fw-black;
+			font-style: normal;
+		}
+	}
+
+	.opt-in__form {
+		margin-top: $gutter;
+
+		input[type=email] {
+			width: 100%;
+			padding: 15px 10px;
+			border: 3px solid $c-ltgrey;
+		}
+
+		.button {
+			margin-top: 10px;
+			width: 200px;
+			display: block;
+		}
+
+		@include breakpoint(tablet) {
+			input[type=email] {
+				max-width: 50%;
+			}
+
+			.button {
+				transform: translateY(2px);
+				margin-left: 8px;
+				display: inline-block;
+				width: auto;
+			}
+		}
+	}
+}
+
+.button {
+	background-color: $c-purple;
+	border: 0;
+	padding: 15px 20px;
+	cursor: pointer;
+	text-decoration: none;
+	text-transform: uppercase;
+	white-space: nowrap;
+	font-family: $f-primary;
+	font-size: $fs-18;
+	font-weight: $fw-bold;
+	color: $c-white;
+	-webkit-appearance: none; // Prevents ugly buttons in iOS
+
+	&:hover {
+		background-color: $c-gold;
+	}
+
+	&.button--grey {
+		background-color: $c-ltgrey;
+		color: $c-black;
+
+		&:hover {
+			background-color: $c-purple;
+			color: $c-white;
+		}
+	}
+
+	&.button--gold {
+		background-color: $c-gold;
+
+		&:hover {
+			background-color: $c-ltgrey;
+		}
+	}
+
+	&.button--tiny {
+		padding: 7px 10px;
+		font-size: $fs-12;
+	}
+
+	&.button--block {
+		width: 100%;
+	}
+}
+
+.product {
+	@include breakpoint(767px, max) {
+		.product__image {
+			margin-bottom: 0;
+		}
+		.product__details {
+			margin-top: 0;
+		}
+	}
+
+	@include breakpoint(tablet) {
+		background: linear-gradient(to bottom, #ffffff 0%,#ffffff 75%,#ffffff 75%,#eeeeee 75%,#ffffff 90%);
+
+		& {
+			padding-bottom: 0;
+		}
+		.product__image,
+		.product__details {
+			margin-bottom: 0;
+		}
+
+		.tile {
+			margin-bottom: $gutter;
+		}
+	}
+
+	.product__image img {
+		display: block;
+		margin: 0 auto;
+	}
+
+	.product__details {
+		h3 {
+			@include set-type-as-h1();
+			text-transform: uppercase;
+		}
+
+		h4 {
+			font-style: italic;
+			text-transform: uppercase;
+		}
+
+		h5 {
+			@include set-type-as-h2();
+			font-weight: $fw-bold;
+			margin-bottom: $gutter;
+		}
+
+		p {
+			font-family: $f-secondary;
+			@include set-type-as-h5();
+		}
+	}
+}
+
+.tile {
+	background-color: $c-white;
+	margin-top: $gutter;
+	padding: $gutter;
+	box-shadow: 0px 2px 5px 1px rgba(51, 51, 51, 0.45);
+	width: 100%;
+
+	@include breakpoint(tablet) {
+		max-width: 360px;
+	}
+
+	label {
+		font-size: $fs-18;
+		text-transform: uppercase;
+		position: relative;
+		top: 2px;
+	}
+
+	input[type=number] {
+		float: right;
+		max-width: 75px;
+		padding: 5px;
+		font-size: $fs-14;
+	}
+
+	.button {
+		margin-top: $gutter;
+	}
+}
+
+.testimonial {
+
+	@include breakpoint(767px, max) {
+		.testimonial__details {
+			text-align: center;
+		}
+
+		blockquote q:before {
+			position: static;
+		}
+	}
+
+	.testimonial__image img {
+		@include set-image-as-circle(); // _utilities.scss
+		display: block;
+		margin: 0 auto;
+
+		@include breakpoint(767px, max) { // _utilities.scss
+			max-width: 200px;
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	margin: 20px 0;
+	text-transform: uppercase;
+	@include set-type-as-h5();
+}
+
+.cauldron {
+	display: none;
+	position: relative;
+	background-color: $c-white;
+	width: 100%;
+	border-bottom: 2px solid $c-ltgrey;
+
+	@include breakpoint(1023px, max) {
+		.col-33 {
+			width: calc(100% - #{$doublegutter});
+		}
+	}
+
+	.icon-close-button {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+		cursor: pointer;
+	}
+
+	.cauldron__heading {
+		font-size: $fs-24;
+		text-transform: uppercase;
+		color: $c-purple;
+		font-weight: $fw-bold;
+		margin-bottom: $gutter;
+	}
+
+	.cauldron__product {
+		@extend .clearfix;
+		margin-bottom: $gutter;
+
+		.cauldron__product-thumbnail {
+			box-shadow: 0px 2px 5px 1px rgba(51, 51, 51, 0.25);
+			float: left;
+			margin-right: 20px;
+		}
+
+		.cauldron__product-details {
+			font-size: $fs-14;
+			text-transform: uppercase;
+
+			span {
+				font-weight: $fw-bold;
+				padding-left: 10px;
+
+				@include breakpoint(desktop) {
+					display: block;
+					float: right;
+				}
+			}
+
+			.button {
+				display: inline-block;
+				margin-top: 3px;
+				text-align: center;
+
+				@include breakpoint(desktop) {
+					min-width: calc(50% - 65px);
+					// Half the width of the container (50%) minus half the width of the image (50px) minus half the width of the images padding (10px) minus half the whitespace between the buttons (5px).
+				}
+
+				&:first-of-type {
+					margin-right: 7px;
+				}
+			}
+		}
+	}
+
+	input[type=submit] {
+		margin-top: $gutter;
+	}
+}
+
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+
+

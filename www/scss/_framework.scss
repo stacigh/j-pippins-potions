@@ -1,0 +1,135 @@
+////////////////////////////////////////////////////////////////////////////
+
+// MICRO RESET
+// Everything should be border-box
+
+////////////////////////////////////////////////////////////////////////////
+*, 
+*:after, 
+*:before { 
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+// GRID ROWS
+
+////////////////////////////////////////////////////////////////////////////
+
+.row {
+	@extend .clearfix;
+	margin: 0 auto;
+	max-width: $media-desktop-max; // _variables.scss
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+// GRID COLUMNS
+
+////////////////////////////////////////////////////////////////////////////
+
+.col-33,
+.col-50,
+.col-66,
+.col-100 {
+	margin: $gutter; // _variables.scss
+	float: left;
+}
+
+// GRID LOOP IN INCREMENTS OF 33%
+// Output: .col-33 and .col-66
+@for $i from 1 through 2 {
+	$num: $i * 33;
+	$percent: $num * 1.01%;
+	
+	// Grid item
+	.col-#{$num} {
+		// Full width on mobile
+		width: calc(100% - #{$doublegutter});
+		
+		// 50% wide on tablet
+		@include breakpoint(tablet) {
+			width: calc(50% - #{$doublegutter});
+		}
+		
+		// Actual width on desktop
+		@include breakpoint(desktop) {
+			width: calc(#{$percent} - #{$doublegutter});
+
+			// Full % with --nogutter
+			&.col--nogutter {
+				width: calc(#{$percent});
+			}
+		}
+	}
+}
+	
+.col-50 {
+	width: calc(100% - #{$doublegutter});
+
+	@include breakpoint(tablet) {
+		width: calc(50% - #{$doublegutter});
+	}
+}
+
+.col-100 {
+	width: calc(100% - #{$doublegutter});
+}
+////////////////////////////////////////////////////////////////////////////
+
+// Banded sections
+
+////////////////////////////////////////////////////////////////////////////
+
+.banded {
+	padding: $gutter 0;
+}
+
+.banded--purple {
+	background-image: url('../img/purple-wood-bg.jpg');
+	color: $c-white;
+}
+
+.banded--gold {
+	background-color: $c-gold;
+	color: $c-white;
+}
+
+// Swap places on large screens
+.banded--reverse {
+	.col-33, .col-66 {
+		position: relative;
+	}
+
+	@include breakpoint(tablet){
+		.col-33 {
+			left: 50%;
+		}
+		.col-66 {
+			left: -50%;
+		}
+	}
+
+	@include breakpoint(desktop){
+		.col-33 {
+			left: 66%;
+		}
+		.col-66 {
+			left: -33%;
+		}
+	}
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+// Responsive images
+
+////////////////////////////////////////////////////////////////////////////
+
+img {
+	max-width: 100%;
+	height: auto;
+}

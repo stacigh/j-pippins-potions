@@ -1,0 +1,185 @@
+////////////////////////////////////////////////////////////////////////////
+
+// Icons
+
+////////////////////////////////////////////////////////////////////////////
+
+@font-face {
+    font-family: 'icomoon';
+    src:    url('../fonts/icomoon.eot?dcqp3d');
+    src:    url('../fonts/icomoon.eot?dcqp3d#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?dcqp3d') format('truetype'),
+        url('../fonts/icomoon.woff?dcqp3d') format('woff'),
+        url('../fonts/icomoon.svg?dcqp3d#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-cauldron:before {
+    content: "\e900";
+}
+.icon-close-button:before {
+    content: "\e901";
+}
+.icon-expand-button:before {
+    content: "\e902";
+}
+
+
+////////////////////////////////////////////////////////////////////////////
+
+// Headings
+
+////////////////////////////////////////////////////////////////////////////
+
+// Responsive Font Sizes
+// -------------------------------------------------------------------------
+@mixin set-type-as-h1(){
+    font-size: $fs-30;  // _variables.scss
+    line-height: 1.55;
+
+    @include breakpoint(tablet) {
+        font-size: $fs-36;
+        line-height: 1.45;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $fs-48;
+        line-height: 1.25;
+    }
+}
+@mixin set-type-as-h2(){
+    font-size: $fs-24;
+    line-height: 1.58;
+
+    @include breakpoint(tablet) {
+        font-size: $fs-30;
+        line-height: 1.55;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $fs-36;
+        line-height: 1.45em;
+    }
+}
+@mixin set-type-as-h3(){
+    font-size: $fs-18;
+        line-height: 1.75;
+
+    @include breakpoint(tablet) {
+        font-size: $fs-24;
+        line-height: 1.58;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $fs-30;
+        line-height: 1.55;
+    }
+}
+@mixin set-type-as-h4(){
+    font-size: $fs-16;
+    line-height: 1.6;
+
+    @include breakpoint(tablet) {
+        font-size: $fs-18;
+        line-height: 1.75;
+    }
+
+    @include breakpoint(desktop) {
+        font-size: $fs-24;
+        line-height: 1.58;
+    }
+}
+@mixin set-type-as-h5(){
+    font-size: $fs-16;
+    line-height: 1.6;
+
+    @include breakpoint(desktop) {
+        font-size: $fs-18;
+        line-height: 1.75;
+    }
+}
+@mixin set-type-as-h6(){
+    font-size: $fs-16;
+    line-height: 1.6;
+}
+
+// Base and Custom Heading Sizes (For SEO)
+//--------------------------------------------------------------------------
+h1, .h1 {
+    @include set-type-as-h1();
+}
+h2, .h2 {
+    @include set-type-as-h2();
+}
+h3, .h3 {
+    @include set-type-as-h3();
+}
+h4, .h4 {
+    @include set-type-as-h4();
+}
+h5, .h5 {
+    @include set-type-as-h5();
+}
+h6, .h6 {
+    @include set-type-as-h6();
+}
+
+////////////////////////////////////////////////////////////////////////////
+
+// Default Text
+
+////////////////////////////////////////////////////////////////////////////
+
+body {
+    font-family: $f-primary; // _variables.scss
+    line-height: 1.6;
+    color: $c-black; // _variables.scss
+}
+
+b {
+    font-weight: $fw-bold; // _variables.scss
+}
+
+blockquote  {
+    q {
+        @include set-type-as-h3();
+        font-family: $f-secondary; // _variables.scss
+        display: block;
+        margin-bottom: 50px;
+        position: relative;
+
+        &:before {
+            content: "\201C";
+            position: absolute;
+            top: 0;
+            left: -20px;
+            opacity: 0.5;
+        }
+    }
+
+    p:first-of-type {
+        @include set-type-as-h3();
+        font-weight: $fw-bold;
+    }
+
+    p:not(:first-of-type) {
+        @include set-type-as-h4();
+        font-style: italic;
+    }
+}

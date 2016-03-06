@@ -1,0 +1,1 @@
+$(document).ready(function(){var e=$(".cauldron");$(".js-toggle-cauldron").click(function(){e.slideToggle()}),$(".js-close-cauldron").click(function(){e.slideUp()}),$(function(){$(".product-name").typed({strings:["Amortentia","Veritaserum","Felix Felicis"],typeSpeed:100,backSpeed:25,backDelay:1500,loop:!0})})});

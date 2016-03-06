@@ -1,0 +1,51 @@
+////////////////////////////////////////////////////////////////////////////
+
+// MIXINS
+
+////////////////////////////////////////////////////////////////////////////
+
+// MEDIA QUERY BREAKPOINTS
+// -------------------------------------------------------------------------
+@mixin breakpoint($point, $minmax: min) {
+	@if $minmax == min {
+		$minmax: min-width;
+	} @else if $minmax == max {
+		$minmax: max-width;
+	} 
+
+	@if $point == desktop {
+		@media screen and ($minmax: $media-desktop-min) { @content; }
+	}
+	@else if $point == tablet {
+		@media screen and ($minmax: $media-tablet-min) { @content; }
+	}
+	@else if $point == mobile {
+		@media screen and (max-width: $media-mobile-max) { @content; }
+	}
+	@else {
+		@media screen and ($minmax: $point) { @content; }
+	}
+}
+
+@mixin breakpoint-range($minpoint, $maxpoint) {
+	@media screen and (min-width: $minpoint) and (max-width: $maxpoint){ @content; }
+}
+// CIRCLES
+// -------------------------------------------------------------------------
+@mixin set-image-as-circle($shadowWidth: 8px) {
+	border-radius: 50%;
+	box-shadow: 0 0 0 $shadowWidth $c-white;
+	background-color: $c-white;
+}
+
+// CLEARFIX
+// -------------------------------------------------------------------------
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+ 
+.clearfix:after {
+  clear: both;
+}
