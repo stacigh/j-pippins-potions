@@ -1,8 +1,14 @@
 $(document).ready(function(){
 
+	// DISABLE BUTTONS SINCE THEY AREN'T HOOKED UP TO A BACKEND
+	// ------------------------------------------------------------------
+	$('.button').click(function(){
+		return false;
+	});
+
 	// TOGGLE CAULDRON
+	// ------------------------------------------------------------------
 	var cauldron = $('.cauldron');
-	// Toggle Cauldron
 	$('.js-toggle-cauldron').click(function(){
 		cauldron.slideToggle();
 	});
@@ -11,8 +17,8 @@ $(document).ready(function(){
 		cauldron.slideUp();
 	});
 
-
 	// REPLACE TEXT
+	// ------------------------------------------------------------------
 	// See vendor.js
 	$(function(){
       $('.product-name').typed({

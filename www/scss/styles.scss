@@ -213,23 +213,23 @@
 	}
 
 	.product__details {
-		h3 {
+		.product__name {
 			@include set-type-as-h1();
 			text-transform: uppercase;
 		}
 
-		h4 {
+		.product__info {
 			font-style: italic;
 			text-transform: uppercase;
 		}
 
-		h5 {
+		.product__price {
 			@include set-type-as-h2();
 			font-weight: $fw-bold;
 			margin-bottom: $gutter;
 		}
 
-		p {
+		.product__details {
 			font-family: $f-secondary;
 			@include set-type-as-h5();
 		}
@@ -259,6 +259,11 @@
 		max-width: 75px;
 		padding: 5px;
 		font-size: $fs-14;
+	}
+
+	.tile__footnote {
+		margin-top: 5px;
+		font-size: $fs-12;
 	}
 
 	.button {
