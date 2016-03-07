@@ -49,3 +49,14 @@
 .clearfix:after {
   clear: both;
 }
+
+// Show on Mobile
+// -------------------------------------------------------------------------
+.no-touch .show-on-mobile {
+	display: none;
+}
+@include breakpoint(tablet) {
+	.show-on-mobile {
+		display: none;
+	}
+}

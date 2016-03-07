@@ -161,8 +161,12 @@ blockquote  {
         @include set-type-as-h3();
         font-family: $f-secondary; // _variables.scss
         display: block;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         position: relative;
+
+        @include breakpoint(tablet) {
+            margin-bottom: 50px;
+        }
 
         &:before {
             content: "\201C";
@@ -181,5 +185,55 @@ blockquote  {
     p:not(:first-of-type) {
         @include set-type-as-h4();
         font-style: italic;
+    }
+}
+
+.button {
+    background-color: $c-purple;
+    border: 0;
+    padding: 15px 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    font-family: $f-primary;
+    font-size: $fs-16;
+    font-weight: $fw-bold;
+    color: $c-white;
+    -webkit-appearance: none; // Prevents ugly buttons in iOS
+
+    @include breakpoint(tablet) {
+        font-size: $fs-18;
+    }
+
+    &:hover {
+        background-color: $c-gold;
+    }
+
+    &.button--grey {
+        background-color: $c-ltgrey;
+        color: $c-black;
+
+        &:hover {
+            background-color: $c-purple;
+            color: $c-white;
+        }
+    }
+
+    &.button--gold {
+        background-color: $c-gold;
+
+        &:hover {
+            background-color: $c-ltgrey;
+        }
+    }
+
+    &.button--tiny {
+        padding: 7px 10px;
+        font-size: $fs-12;
+    }
+
+    &.button--block {
+        width: 100%;
     }
 }

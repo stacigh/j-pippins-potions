@@ -20,13 +20,19 @@ $(document).ready(function(){
 	// REPLACE TEXT
 	// ------------------------------------------------------------------
 	// See vendor.js
-	$(function(){
-      $('.product-name').typed({
-        strings: ['Amortentia', 'Veritaserum', 'Felix Felicis'],
-        typeSpeed: 100,
-        backSpeed: 25,
-        backDelay: 1500,
-        loop: true
-      });
-  });
+	function isMobile() {
+		return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	}
+
+	if (!isMobile()) {
+		$(function(){
+			$('.js-product-name').typed({
+				strings: ['Amortentia', 'Veritaserum', 'Felix Felicis'],
+				typeSpeed: 100,
+				backSpeed: 25,
+				backDelay: 1500,
+				loop: true
+			});
+		});
+	}
 });
